@@ -1,0 +1,12 @@
+proc program_device () {
+
+  reset halt
+  flash write_image erase /home/cube/Desktop/Projects/SDSusi/BUILD/SDSusi.bin 0x08000000
+  # Bring device up
+  reset run
+  shutdown
+}
+
+init
+reset init
+program_device ()
